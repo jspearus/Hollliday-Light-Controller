@@ -25,7 +25,7 @@
       <div class="relativeflex flex-col">
         <div class="row justify-content-center text-center">
           <h1>
-            <p>Control Status = {{ cmd }} </p>
+            <p>Control Status = {{ currentState }} </p>
           </h1>
         </div>
         <div class="row-md-20 justify-content-center text-center">
@@ -82,6 +82,7 @@
               console.log(error);
             });
           },
+
         }
     })    
     //Particle code here
@@ -94,11 +95,18 @@
         }, function(err) {
           console.error(err);
         });
+
+        app.particle.getEventStream({ deviceId: '2e002a000f47363336383437', name: 'CurrentComm', auth: 'e4a94a5a7dae6fae374789bcfd88c44818fe7822' })
+          .then(function(stream) {
+              stream.on('event', function(data) {
+                console.log("Event: ", data.data);
+                this.app.currentState = data.data;
+              });
+            });
+
         app.particle.getVariable({ deviceId: '2e002a000f47363336383437', name: 'currentComm', auth: 'e4a94a5a7dae6fae374789bcfd88c44818fe7822' }).then(function(data) {
-              console.log('Device variable retrieved successfully:', data.body.result);
-              this.app.cmd = data.body.result;
-            }, function(err) {
-              console.log('An error occurred while getting attrs:', err);
+              console.log('Current Device Mode:', data.body.result);
+              this.app.currentState = data.body.result;
             });
       
   </script>
