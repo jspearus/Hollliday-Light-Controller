@@ -100,11 +100,12 @@
           .then(function(stream) {
               stream.on('event', function(data) {
                 console.log("Event: ", data.data);
-                this.app.currentState = data.data;
+                app.currentState = data.data;
               });
             });
 
-        app.particle.getVariable({ deviceId: '2e002a000f47363336383437', name: 'currentComm', auth: 'e4a94a5a7dae6fae374789bcfd88c44818fe7822' }).then(function(data) {
+        app.particle.getVariable({ deviceId: '2e002a000f47363336383437', name: 'currentComm', auth: 'e4a94a5a7dae6fae374789bcfd88c44818fe7822' })
+          .then(function(data) {
               console.log('Current Device Mode:', data.body.result);
               this.app.currentState = data.body.result;
             });
