@@ -24,7 +24,9 @@
     <div class="container-fluid">
       <div class="relativeflex flex-col">
         <div class="row justify-content-center text-center">
-          <h3>Control Status = {{ cmd }}</h3>
+          <h1>
+            <p>Control Status = {{ currentState }} </p>
+          </h1>
         </div>
         <div class="row-md-20 justify-content-center text-center">
           <br>
@@ -48,12 +50,19 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/particle-api-js@8/dist/particle.min.js"></script>
 
   <script>
     var app = new Vue({
         el: '#app',
         data: {
-          cmd: 'off'
+          cmd: 'off',
+          currentState: 'off',
+          token: ''
+        },
+        computed:{
+
+
         },
         methods: {
           button(command){
@@ -72,9 +81,35 @@
             .catch(function (error) {
               console.log(error);
             });
-          }
+          },
+
         }
-    })      
+    })    
+    //Particle code here
+  
+      app.particle = new Particle();
+      app.particle.login({ username: 'jspearus@gmail.com', password: 'yqhevr2A' })
+        .then(function(result) {
+          console.log('Your access token', result.body.access_token);
+          this.app.token = result.body.access_token;
+        }, function(err) {
+          console.error(err);
+        });
+
+        app.particle.getEventStream({ deviceId: '2e002a000f47363336383437', name: 'CurrentComm', auth: 'e4a94a5a7dae6fae374789bcfd88c44818fe7822' })
+          .then(function(stream) {
+              stream.on('event', function(data) {
+                console.log("Event: ", data.data);
+                app.currentState = data.data;
+              });
+            });
+
+        app.particle.getVariable({ deviceId: '2e002a000f47363336383437', name: 'currentComm', auth: 'e4a94a5a7dae6fae374789bcfd88c44818fe7822' })
+          .then(function(data) {
+              console.log('Current Device Mode:', data.body.result);
+              this.app.currentState = data.body.result;
+            });
+      
   </script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
