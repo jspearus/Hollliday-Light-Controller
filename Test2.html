@@ -23,18 +23,17 @@
   <div id="app" >
     <div class="container-fluid">
       <div class="relativeflex flex-col">
-        <div class="row justify-content-center text-center">
+        <div class="justify-content-center text-center">
           <h3>
             <p>Control Status = {{ currentState }} </p>
           </h3>
         </div>
-        <div class="row justify-content-center text-center">
+        <div class="rjustify-content-center text-center">
           <h4>
             <p>Recieved Data = {{ displayData }} </p>
           </h4>
         </div>
-        <div class="row-md-20 justify-content-center text-center">
-          <br>
+        <div class="ustify-content-center text-center">
           <br>
           <button @click="button('on')" class="btn btn-primary">On</button>
           <button @click="button('off')" class="btn btn-primary">Off</button>
@@ -42,12 +41,85 @@
           <button @click="button('stop')" class="btn btn-primary">Stop</button>
         </div>
         <br>
-        <br>
-        <div class="row-md-20 justify-content-center text-center">
+        <div class="justify-content-center text-center">
           <button @click="button('test1')" class="btn btn-primary">Test1</button>
           <button @click="button('test2')" class="btn btn-primary">Test2</button>
           <button @click="button('test3')" class="btn btn-primary">Test3</button>
           <button @click="button('test4')" class="btn btn-primary">Test4</button>
+        </div>
+        <div class="justify-content-top text-center">
+          <h6> Color Selected = {{ color }}</h6>
+          <svg>
+            <rect id="px0" @click="button('px0')" style="fill: red" x="0" y="0" width="25" height="25"/>
+            <rect id="px1" @click="button('px1')" style="fill: red" x="30" y="0" width="25" height="25"/>
+            <rect id="px2" @click="button('px2')"style="fill: red" x="60" y="0" width="25" height="25"/>
+            <rect id="px3" @click="button('px3')"style="fill: red" x="90" y="0" width="25" height="25"/>
+            <rect id="px4" @click="button('px4')" style="fill: red" x="120" y="0" width="25" height="25"/>
+            <rect id="px5" @click="button('px5')" style="fill: red" x="150" y="0" width="25" height="25"/>
+            <rect id="px6" @click="button('px6')"style="fill: red" x="180" y="0" width="25" height="25"/>
+            <rect id="px7" @click="button('px7')"style="fill: red" x="210" y="0" width="25" height="25"/>
+            <rect id="px8" @click="button('px8')" style="fill: red" x="0" y="30" width="25" height="25"/>
+            <rect id="px9" @click="button('px9')" style="fill: red" x="30" y="30" width="25" height="25"/>
+            <rect id="px10" @click="button('px10')"style="fill: red" x="60" y="30" width="25" height="25"/>
+            <rect id="px11" @click="button('px11')"style="fill: red" x="90" y="30" width="25" height="25"/>
+            <rect id="px12" @click="button('px12')" style="fill: red" x="120" y="30" width="25" height="25"/>
+            <rect id="px13" @click="button('px13')" style="fill: red" x="150" y="30" width="25" height="25"/>
+            <rect id="px14" @click="button('px14')"style="fill: red" x="180" y="30" width="25" height="25"/>
+            <rect id="px15" @click="button('px15')"style="fill: red" x="210" y="30" width="25" height="25"/>
+            <rect id="px16" @click="button('px16')" style="fill: red" x="0" y="60" width="25" height="25"/>
+            <rect id="px17" @click="button('px17')" style="fill: red" x="30" y="60" width="25" height="25"/>
+            <rect id="px18" @click="button('px18')"style="fill: red" x="60" y="60" width="25" height="25"/>
+            <rect id="px19" @click="button('px19')"style="fill: red" x="90" y="60" width="25" height="25"/>
+            <rect id="px20" @click="button('px20')" style="fill: red" x="120" y="60" width="25" height="25"/>
+            <rect id="px21" @click="button('px21')" style="fill: red" x="150" y="60" width="25" height="25"/>
+            <rect id="px22" @click="button('px22')"style="fill: red" x="180" y="60" width="25" height="25"/>
+            <rect id="px23" @click="button('px23')"style="fill: red" x="210" y="60" width="25" height="25"/>
+            <rect id="px24" @click="button('px24')" style="fill: red" x="0" y="90" width="25" height="25"/>
+            <rect id="px25" @click="button('px25')" style="fill: red" x="30" y="90" width="25" height="25"/>
+            <rect id="px26" @click="button('px26')"style="fill: red" x="60" y="90" width="25" height="25"/>
+            <rect id="px27" @click="button('px27')"style="fill: red" x="90" y="90" width="25" height="25"/>
+            <rect id="px28" @click="button('px28')" style="fill: red" x="120" y="90" width="25" height="25"/>
+            <rect id="px29" @click="button('px29')" style="fill: red" x="150" y="90" width="25" height="25"/>
+            <rect id="px30" @click="button('px30')"style="fill: red" x="180" y="90" width="25" height="25"/>
+            <rect id="px31" @click="button('px31')"style="fill: red" x="210" y="90" width="25" height="25"/>
+            <rect id="px32" @click="button('px32')" style="fill: red" x="0" y="120" width="25" height="25"/>
+            <rect id="px33" @click="button('px33')" style="fill: red" x="30" y="120" width="25" height="25"/>
+            <rect id="px34" @click="button('px34')"style="fill: red" x="60" y="120" width="25" height="25"/>
+            <rect id="px35" @click="button('px35')"style="fill: red" x="90" y="120" width="25" height="25"/>
+            <rect id="px36" @click="button('px36')" style="fill: red" x="120" y="120" width="25" height="25"/>
+            <rect id="px37" @click="button('px37')" style="fill: red" x="150" y="120" width="25" height="25"/>
+            <rect id="px38" @click="button('px38')"style="fill: red" x="180" y="120" width="25" height="25"/>
+            <rect id="px39" @click="button('px39')"style="fill: red" x="210" y="120" width="25" height="25"/>
+            <rect id="px40" @click="button('px40')" style="fill: red" x="0" y="150" width="25" height="25"/>
+            <rect id="px41" @click="button('px41')" style="fill: red" x="30" y="150" width="25" height="25"/>
+            <rect id="px42" @click="button('px42')"style="fill: red" x="60" y="150" width="25" height="25"/>
+            <rect id="px43" @click="button('px43')"style="fill: red" x="90" y="150" width="25" height="25"/>
+            <rect id="px44" @click="button('px44')" style="fill: red" x="120" y="150" width="25" height="25"/>
+            <rect id="px45" @click="button('px45')" style="fill: red" x="150" y="150" width="25" height="25"/>
+            <rect id="px46" @click="button('px46')"style="fill: red" x="180" y="150" width="25" height="25"/>
+            <rect id="px47" @click="button('px47')"style="fill: red" x="210" y="150" width="25" height="25"/>
+            <rect id="px48" @click="button('px48')" style="fill: red" x="0" y="180" width="25" height="25"/>
+            <rect id="px49" @click="button('px49')" style="fill: red" x="30" y="180" width="25" height="25"/>
+            <rect id="px50" @click="button('px50')"style="fill: red" x="60" y="180" width="25" height="25"/>
+            <rect id="px51" @click="button('px51')"style="fill: red" x="90" y="180" width="25" height="25"/>
+            <rect id="px52" @click="button('px52')" style="fill: red" x="120" y="180" width="25" height="25"/>
+            <rect id="px53" @click="button('px53')" style="fill: red" x="150" y="180" width="25" height="25"/>
+            <rect id="px54" @click="button('px54')"style="fill: red" x="180" y="180" width="25" height="25"/>
+            <rect id="px55" @click="button('px55')"style="fill: red" x="210" y="180" width="25" height="25"/>
+            <rect id="px56" @click="button('px56')" style="fill: red" x="0" y="210" width="25" height="25"/>
+            <rect id="px57" @click="button('px57')" style="fill: red" x="30" y="210" width="25" height="25"/>
+            <rect id="px58" @click="button('px58')"style="fill: red" x="60" y="210" width="25" height="25"/>
+            <rect id="px59" @click="button('px59')"style="fill: red" x="90" y="210" width="25" height="25"/>
+            <rect id="px60" @click="button('px60')" style="fill: red" x="120" y="210" width="25" height="25"/>
+            <rect id="px61" @click="button('px61')" style="fill: red" x="150" y="210" width="25" height="25"/>
+            <rect id="px62" @click="button('px62')"style="fill: red" x="180" y="210" width="25" height="25"/>
+            <rect id="px63" @click="button('px63')"style="fill: red" x="210" y="210" width="25" height="25"/>
+
+            <rect id="red" @click="cColor('red')" style="fill: red" x="270" y="0" width="25" height="25"/>
+            <rect id="blue" @click="cColor('blue')" style="fill: blue" x="270" y="30" width="25" height="25"/>
+            <rect id="green" @click="cColor('green')" style="fill: green" x="270" y="60" width="25" height="25"/>
+            <rect id="yellow" @click="cColor('yellow')" style="fill: yellow" x="270" y="90" width="25" height="25"/>
+          </svg>
         </div>
       </div>
     </div>
@@ -65,7 +137,8 @@
           currentState: 'off',
           token: '',
           recData: '',
-          displayData: ''
+          displayData: '',
+          color: 'red'
         },
         computed:{
 
@@ -74,6 +147,13 @@
         methods: {
           button(command){
             this.cmd = command;
+          },
+
+          cColor(command){
+            this.color = command;
+          },
+          clickPixel(command){
+            this.color = command;
           }
         },
         watch:{
@@ -119,6 +199,9 @@
                 app.recData = data.data;
                 if (app.recData == "Test Complete!") {
                   app.displayData = "if test complete";
+                }
+                else if (app.recData == "Test 3") {
+                  app.displayData = "Else if test complete";
                 }
               });
             });
