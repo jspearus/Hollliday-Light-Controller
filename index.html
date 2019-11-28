@@ -103,7 +103,7 @@
           console.error(err);
         });
 
-        app.particle.getEventStream({ deviceId: '2e002a000f47363336383437', name: 'CurrentComm', auth: 'e4a94a5a7dae6fae374789bcfd88c44818fe7822' })
+        app.particle.getEventStream({ deviceId: '2e002a000f47363336383437', name: 'CurrentComm', auth: 'edf5d00ef28224d0a4a47a4e354e23becf0c487a' })
           .then(function(stream) {
               stream.on('event', function(data) {
                 console.log("Event: ", data.data);
@@ -112,7 +112,7 @@
               });
             });
 
-        app.particle.getEventStream({ deviceId: '2e002a000f47363336383437', name: 'dataRec', auth: 'e4a94a5a7dae6fae374789bcfd88c44818fe7822' })
+        app.particle.getEventStream({ deviceId: '2e002a000f47363336383437', name: 'dataRec', auth: 'edf5d00ef28224d0a4a47a4e354e23becf0c487a' })
           .then(function(stream) {
               stream.on('event', function(data) {
                 console.log("Event: ", data.data);
@@ -126,7 +126,7 @@
               });
             });
 
-        app.particle.getVariable({ deviceId: '2e002a000f47363336383437', name: 'currentComm', auth: 'e4a94a5a7dae6fae374789bcfd88c44818fe7822' })
+        app.particle.getVariable({ deviceId: '2e002a000f47363336383437', name: 'currentComm', auth: 'edf5d00ef28224d0a4a47a4e354e23becf0c487a' })
           .then(function(data) {
               console.log('Current Device Mode:', data.body.result);
               this.app.currentState = data.body.result;
