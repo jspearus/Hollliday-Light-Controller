@@ -97,7 +97,7 @@
       app.particle = new Particle();
       app.particle.login({ username: 'jspearus@gmail.com', password: 'yqhevr2A' })
         .then(function(result) {
-          console.log('Your access token', result.body.access_token);
+          console.log('this is Your access token', result.body.access_token);
           this.app.token = result.body.access_token;
         }, function(err) {
           console.error(err);
