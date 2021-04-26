@@ -79,7 +79,7 @@
         watch:{
           cmd: function(){
             //axios code here///////////////////////////////////////////
-            axios.post('https://api.particle.io/v1/devices/2e002a000f47363336383437/Control?access_token=f604f4416be75092c41eff602c786278431c1ca9', {
+            axios.post('https://api.particle.io/v1/devices/2e002a000f47363336383437/Control?access_token=1d5898301b205e0eb6065a49a850f29207bd2bb2', {
               arg: this.cmd,
             })
             .then(function (response) {
@@ -92,7 +92,7 @@
 
         }
     })    
-    //Particle code here
+       //Particle code here
   
       app.particle = new Particle();
       app.particle.login({ username: 'jspearus@gmail.com', password: 'yqhevr2A' })
